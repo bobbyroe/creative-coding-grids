@@ -8,6 +8,8 @@ Block out a Joshua-Davis-style grid in Three.js, swap bold color palettes, and s
 If this helps, **support on Patreon** ❤️
 [https://patreon.com/RobotBobby](https://patreon.com/RobotBobby)
 
+Watch the tutorial on [YouTube](https://youtu.be/7qbyH7-mfV0)
+
 ![Grid Screenshot](./grid-shot.png)
 
 > Inspiration: [joshuadavis.com](https://joshuadavis.com/) • [HYPE for Processing](https://github.com/hype/HYPE_Processing)
