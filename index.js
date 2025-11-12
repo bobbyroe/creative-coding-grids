@@ -15,7 +15,8 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(w, h);
 document.body.appendChild(renderer.domElement);
 
-new OrbitControls(camera, renderer.domElement);
+const ctrls = new OrbitControls(camera, renderer.domElement);
+ctrls.enableDamping = true;
 
 const composer = new EffectComposer(renderer);
 const renderPass = new RenderPass(scene, camera);
@@ -67,8 +68,8 @@ for (let x = 0; x < gridSize; x += 1) {
   for (let y = 0; y < gridSize; y += 1) {
     const hex = palette[Math.floor(Math.random() * palette.length)];
     const color = new THREE.Color(hex);
-    const scale = 1.6;
-    const z = -1 + Math.random() * 0.1;
+    const scale = 1.6 + Math.random() * 0.2 - 0.1;
+    const z = -1 + Math.random() * 0.2 - 0.1;
     const box = getBox({ color, index: x + y, x, y, z, scale });
     boxGroup.add(box);
   }
@@ -97,6 +98,7 @@ scene.add(pointlight);
 function animate() {
   requestAnimationFrame(animate);
   composer.render(scene, camera);
+  ctrls.update();
 }
 animate();
 
